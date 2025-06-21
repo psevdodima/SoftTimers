@@ -6,7 +6,7 @@ void blink_handler (void)
 {
 	static int tog_counter = 0;
 	toggle_led(&led1);
-	if(--tog_counter == 6){
+	if(++tog_counter == 6){
 		task_descriptor_st* this_task = SoftTaskGetSelf();
 		SoftTaskCancel(this_task);
 	}
